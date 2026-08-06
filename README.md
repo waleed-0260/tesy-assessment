@@ -1,9 +1,10 @@
 TECH STACK USED IN THIS PROJECT:
 
-Next.js 14 App Router
-Shadcn
-Tailwind css 
-framer-motion
+- **Next.js 14 (App Router)**
+- **TypeScript**
+- **Shadcn UI**
+- **Tailwind CSS**
+- **Framer Motion**
 
 I read all the comments in the figma try to analyze them and search about the purpose of each comment behind this app than I try to implement them in code the gif and the images used in figma I've used the same in this project and actually these images and gif are having the black background that makes the overall project looks bad because of the colors.
 
