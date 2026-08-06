@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+TECH STACK USED IN THIS PROJECT:
 
-## Getting Started
+Next.js 14 App Router
+Shadcn
+Tailwind css 
+framer-motion
 
-First, run the development server:
+I read all the comments in the figma try to analyze them and search about the purpose of each comment behind this app than I try to implement them in code the gif and the images used in figma I've used the same in this project and actually these images and gif are having the black background that makes the overall project looks bad because of the colors.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+MAJOR ISSUE:
+I was wondering how the dashbaord will open in the page like in the figma first page there is a loading sekelton page and in that page there is the dashbaord shown so I think about that ask about this from claude and the answer I got was to impelement that dashbaord inside the  app only so I did and on click on each honeycomb icon I've made a flight animation it was very difficult to find out what that comment say how it si giving example of the inbox floating animaation affect etc but what I got best I implement this.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The next main part was the APIs and data fetching   I've implemented the dummyjson API and make the conversations data dynamic as possible sues dynamic fetchign for single conversations and fetcehd all users for the list made a single file api.ts where all the data fetching functions are working then fetches this data and maps this data according to the project in the conversations file the next step is to show the data at the main page and show in the components for that I had to make an async function than I have use it in the complete app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In this complete design and comments the major thing that takes me too much time to udnerstand was the flying aniamtion of these honeycomb icons to the dashboard and affect of the honeycomb hover and how the dashbaord will be displayed. for all the honeycomb icon I HAVE made a different section but that section is static it is only dummy data 
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I think I can optimzie the code for the API by just fetching the data once at the page.tsx file and store the data in a store or somewhat and use them wherever I need but currently I Have implemented the other safer way as per the project requirements 

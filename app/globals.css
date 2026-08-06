@@ -1,26 +1,250 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-ronzino);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+@property --angle-r {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.icons-bg {
+  /* position: relative; */
+  height: 60px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: url(#hex-rounded);
+  background-color: rgb(255 255 255 / 0.1);
+  transition: filter 200ms ease;
+}
+
+/* Border-only layer: sits under .icons-bg::before, so only the ring gap
+   (between the shape's outer edge and ::before's opaque inset edge) ever
+   shows through — the icon's own fill/background never changes. */
+.icons-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  clip-path: url(#hex-rounded);
+}
+
+.icons-bg::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  z-index: 1;
+  clip-path: url(#hex-rounded);
+  background-color: rgb(30 41 59 / 1);
+  transition: background-color 200ms ease;
+}
+
+.icons-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Selected: a static gradient fill + gradient border ring — no animation,
+   that's reserved for :hover below. The interior fill lives on ::before
+   (it sits above the base .icons-bg background, so that's the layer that
+   actually needs the gradient for it to be visible at all). */
+.icons-bg[data-selected="true"]::before {
+  background: linear-gradient(135deg, rgb(37 99 235 / 1), rgb(96 165 250 / 0.85));
+}
+
+.icons-bg[data-selected="true"]::after {
+  background: linear-gradient(135deg, rgb(96 165 250 / 0.95), rgb(224 242 254 / 0.95));
+}
+
+/* Progress fill: from the start point (top-right), the lit arc grows to
+   cover exactly as much of the ring as the animation has elapsed — 50%
+   through the animation, 50% of the border is lit, and so on — until the
+   full ring is lit, then it disappears. Linear timing keeps that 1:1
+   correspondence between elapsed time and covered arc exact. */
+.icons-bg:hover::after {
+  background-image:
+    conic-gradient(from -45deg at 50% 50%,
+      rgb(37 99 235 / 1) 0deg,
+      rgb(59 130 246 / 1) calc(var(--angle-r) * 0.55),
+      rgb(191 219 254 / 1) var(--angle-r),
+      transparent var(--angle-r),
+      transparent 360deg);
+  filter: drop-shadow(0 0 5px rgb(147 197 253 / 1)) drop-shadow(0 0 12px rgb(37 99 235 / 0.65));
+  animation-name: icon-border-light;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes icon-border-light {
+  0% {
+    --angle-r: 0deg;
+    opacity: 1;
+  }
+  70% {
+    --angle-r: 360deg;
+    opacity: 1;
+  }
+  100% {
+    --angle-r: 360deg;
+    opacity: 0;
+  }
+}
+
+/* Brief background tint on the nav item once the flyer lands, then settle. */
+@keyframes nav-pulse {
+  0% {
+    background-color: rgb(37 99 235 / 0.18);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.nav-pulse {
+  animation: nav-pulse 300ms ease-out;
+}
+
+.rotating-image {
+  animation: rotate360 20s linear infinite;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
